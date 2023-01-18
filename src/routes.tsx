@@ -4,7 +4,7 @@ const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<> </>} />
+        <Route path="/" element={<p>Some stuff here </p>} />
       </Routes>
     </Router>
   );
