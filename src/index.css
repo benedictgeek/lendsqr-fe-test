@@ -5,8 +5,14 @@
   src: url(../src/assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
 }
 
+html,
+#root {
+  height: 100%;
+}
+
 body {
   font-family: Lendsqr;
+  height: 100%;
   margin: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
