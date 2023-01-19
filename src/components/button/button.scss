@@ -1,0 +1,75 @@
+@import "../../styles/colors";
+
+@mixin setBgColor($baseColor) {
+  background-color: $baseColor;
+
+  &:hover {
+    background-color: darken($baseColor, 5%);
+  }
+}
+
+.button {
+  display: inline-block;
+  color: white;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 16px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+  outline: none;
+  width: 100%;
+
+  &.contained {
+    @include setBgColor($secondaryColor);
+  }
+
+  &.outlined {
+    @include setBgColor(white);
+    color: $secondaryColor;
+    border: 1px solid $secondaryColor;
+  }
+
+  // &.success {
+  //   @include setBgColor($success_color);
+  // }
+
+  // &.error {
+  //   @include setBgColor($error_color);
+  // }
+
+  &.disabled {
+    background-color: $disabledColor;
+
+    &:hover {
+      background-color: $disabledColor;
+      cursor: not-allowed;
+    }
+  }
+
+  &.Bloading {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 2px solid transparent;
+      border-right-color: $textColor;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: Krotate 0.5s linear infinite;
+    }
+  }
+
+  @keyframes Krotate {
+    to {
+      transform: translateY(-50%) rotateZ(360deg);
+    }
+  }
+}
