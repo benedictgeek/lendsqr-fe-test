@@ -5,11 +5,13 @@ import styles from "./illustration.module.scss";
 const Illustration = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.logoContainer}>
-        <Logo />
-      </div>
-      <div className={styles.illustrationContainer}>
-        <img src={siginImage} />
+      <div className={styles.content}>
+        <div className={styles.logoContainer}>
+          <Logo />
+        </div>
+        <div className={styles.illustrationContainer}>
+          <img src={siginImage} />
+        </div>
       </div>
     </div>
   );

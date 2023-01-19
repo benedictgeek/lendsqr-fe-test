@@ -3,6 +3,11 @@
   flex-direction: column;
   flex: 1;
   padding: 10px 70px;
+  align-items: flex-end;
+}
+
+.content {
+  max-width: 800px;
 }
 
 .logoContainer {
