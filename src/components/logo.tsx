@@ -1,9 +1,25 @@
-export const Logo = ({ logoId = "defaultLogo" }: { logoId?: string }) => {
+export const Logo = ({
+  logoId = "defaultLogo",
+  height = 36,
+  width = 174,
+  viewboxHeightOffset = 0,
+  viewboxX = 0,
+  viewboxY = 0,
+}: {
+  logoId?: string;
+  height?: number;
+  viewboxHeightOffset?: number;
+  width?: number;
+  viewboxX?: number;
+  viewboxY?: number;
+}) => {
   return (
     <svg
-      width="174"
-      height="36"
-      viewBox="0 0 174 36"
+      width={width}
+      height={height}
+      viewBox={`${viewboxX} ${viewboxY} ${width} ${
+        height + viewboxHeightOffset
+      }`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

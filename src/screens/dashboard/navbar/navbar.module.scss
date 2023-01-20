@@ -1,0 +1,95 @@
+@import "../../../styles/utils";
+@import "../../../styles/colors";
+
+.container {
+  font-family: "Work Sans", sans-serif;
+  height: 100px;
+  padding: 35px 0;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  display: flex;
+  color: white;
+}
+
+.logoSection {
+  padding: 0 0 0 30px;
+  width: 283px;
+  display: flex;
+}
+
+.navSection {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.searchInput {
+  border-radius: 8px;
+  height: 40px;
+  border-width: 1px;
+  max-width: 400px;
+}
+
+.searchIconContainer {
+  height: 40px;
+  width: 56px;
+  margin-right: -10px;
+  padding: 5px;
+  background-color: $secondaryColor;
+  cursor: pointer;
+  @include flexCenter;
+}
+
+.navItemsContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  height: fit-content;
+  margin-left: 50px;
+
+  .docsLink {
+    font-family: "Roboto", sans-serif;
+    align-self: baseline;
+    border-bottom: 1px solid $primaryColor;
+    margin-right: 50.16px;
+    font-size: 16px;
+    line-height: 14px;
+
+    color: $primaryColor;
+  }
+
+  .bell {
+    font-weight: 500;
+    align-self: baseline;
+    .bellSvg {
+      margin-bottom: -3px;
+    }
+  }
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  margin-left: 33.16px;
+  .avartar {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: 500;
+    color: $primaryColor;
+    padding-left: 10px;
+    padding-right: 10.33px;
+  }
+}
