@@ -1,13 +1,52 @@
 @import "../../../styles/utils";
 @import "../../../styles/colors";
 
+@mixin userName {
+  font-size: 16px;
+  font-weight: 500;
+  color: $primaryColor;
+  padding-left: 10px;
+  padding-right: 10.33px;
+}
+
+@mixin docsLink {
+  font-family: "Roboto", sans-serif;
+  align-self: baseline;
+  border-bottom: 1px solid $primaryColor;
+  margin-right: 50.16px;
+  font-size: 16px;
+  line-height: 14px;
+  color: $primaryColor;
+  cursor: pointer;
+}
+
+.searchInput {
+  border-radius: 8px;
+  height: 40px;
+  border-width: 1px;
+  max-width: 400px;
+  input {
+    padding: 12px 20px;
+  }
+}
+
+.searchIconContainer {
+  height: 40px;
+  width: 56px;
+  margin-right: -10px;
+  padding: 5px;
+  background-color: $secondaryColor;
+  cursor: pointer;
+  @include flexCenter;
+}
+
 .container {
   font-family: "Work Sans", sans-serif;
   height: 100px;
   padding: 35px 0;
   box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
   display: flex;
-  color: white;
+  background: white;
 }
 
 .logoSection {
@@ -21,24 +60,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  //same padding for content
   padding: 0 60px;
 }
 
-.searchInput {
-  border-radius: 8px;
-  height: 40px;
-  border-width: 1px;
-  max-width: 400px;
-}
-
-.searchIconContainer {
-  height: 40px;
-  width: 56px;
-  margin-right: -10px;
-  padding: 5px;
-  background-color: $secondaryColor;
-  cursor: pointer;
-  @include flexCenter;
+.iconSearchContainer {
+  display: none;
+  align-self: end;
+  .searchSvg {
+    fill: $primaryColor;
+  }
 }
 
 .navItemsContainer {
@@ -54,14 +85,7 @@
   margin-left: 50px;
 
   .docsLink {
-    font-family: "Roboto", sans-serif;
-    align-self: baseline;
-    border-bottom: 1px solid $primaryColor;
-    margin-right: 50.16px;
-    font-size: 16px;
-    line-height: 14px;
-
-    color: $primaryColor;
+    @include docsLink;
   }
 
   .bell {
@@ -73,6 +97,11 @@
   }
 }
 
+.userProfileMenu {
+  display: none;
+}
+
+.userProfileMenu,
 .userProfile {
   display: flex;
   align-items: center;
@@ -86,10 +115,77 @@
   }
 
   .name {
-    font-size: 16px;
-    font-weight: 500;
-    color: $primaryColor;
-    padding-left: 10px;
-    padding-right: 10.33px;
+    @include userName;
+  }
+}
+
+.userProfileMenu {
+  display: none;
+}
+
+.mobileDropdownContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .name {
+    @include userName;
+    padding: 5px 0;
+  }
+
+  .docsLink {
+    @include docsLink;
+    margin: 0;
+    align-self: unset;
+    margin: 5px 0;
+    // line-height: 1px;
+  }
+  .bell {
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 956px) {
+  .navSection {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .defaultSearchContainer {
+    display: none;
+  }
+  .iconSearchContainer {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    justify-content: flex-end;
+  }
+
+  .navSection {
+    justify-content: flex-end;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .iconSearchContainer {
+    display: none;
+  }
+
+  .userProfileMenu {
+    display: flex;
+    margin-left: 5px;
+    .avartar {
+      margin-right: 10px;
+    }
+  }
+  .userProfile {
+    display: none;
+    margin-left: 5px;
   }
 }

@@ -3,6 +3,8 @@ import { Input } from "../../../components/input/input";
 import { Logo } from "../../../components/logo";
 import styles from "./navbar.module.scss";
 import userImg from "../../../assets/images/userImage.png";
+import Dropdown from "../../../components/dropdown/dropdown";
+
 export const NavBar = () => {
   return (
     <div className={styles.container}>
@@ -10,15 +12,16 @@ export const NavBar = () => {
         <Logo height={30} width={150} viewboxHeightOffset={8} viewboxX={20} />
       </div>
       <div className={styles.navSection}>
-        <Input
-          placeholder="Search for anything"
-          className={styles.searchInput}
-          iconRight={
-            <div className={styles.searchIconContainer}>
-              <SearchIcon />
-            </div>
-          }
-        />
+        <div className={styles.defaultSearchContainer}>
+          <SearchInput />
+        </div>
+
+        <div className={styles.iconSearchContainer}>
+          <Dropdown content={<SearchInput />}>
+            <SearchIcon size={16} className={styles.searchSvg} />
+          </Dropdown>
+        </div>
+
         <div className={styles.navItemsContainer}>
           <div className={styles.nav}>
             <a className={styles.docsLink}>Docs</a>
@@ -35,8 +38,45 @@ export const NavBar = () => {
             <div className={styles.name}>Adedeji</div>
             <DropDownIcon />
           </div>
+
+          <Dropdown content={<MobileDropDownContent />}>
+            <div className={styles.userProfileMenu}>
+              <div
+                className={styles.avartar}
+                style={{ backgroundImage: `url(${userImg})` }}
+              ></div>
+              <DropDownIcon />
+            </div>
+          </Dropdown>
         </div>
       </div>
     </div>
+  );
+};
+
+const MobileDropDownContent = () => {
+  return (
+    <div className={styles.mobileDropdownContainer}>
+      <div className={styles.name}>Adedeji</div>
+      <a className={styles.docsLink}>Docs</a>
+      <div className={styles.bell}>
+        <BellIcon className={styles.bellSvg} />
+      </div>
+      <SearchInput />
+    </div>
+  );
+};
+
+const SearchInput = () => {
+  return (
+    <Input
+      placeholder="Search for anything"
+      className={styles.searchInput}
+      iconRight={
+        <div className={styles.searchIconContainer}>
+          <SearchIcon />
+        </div>
+      }
+    />
   );
 };
