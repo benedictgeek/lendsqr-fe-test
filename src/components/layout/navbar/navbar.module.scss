@@ -1,5 +1,6 @@
 @import "../../../styles/utils";
 @import "../../../styles/colors";
+@import "../../../styles/values";
 
 @mixin userName {
   font-size: 16px;
@@ -51,7 +52,7 @@
 
 .logoSection {
   padding: 0 0 0 30px;
-  width: 283px;
+  width: $sidebarWidth;
   display: flex;
 }
 

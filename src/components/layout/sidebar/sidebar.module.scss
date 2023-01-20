@@ -1,0 +1,45 @@
+@import "../../../styles/utils";
+@import "../../../styles/colors";
+@import "../../../styles/values";
+
+.container {
+  width: $sidebarWidth;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+  overflow: scroll;
+  font-family: "Work Sans", sans-serif;
+}
+
+.dashboard {
+  margin-bottom: 19px;
+}
+
+.itemContainer {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  color: $primaryColor;
+  opacity: 0.6;
+  height: 40px;
+}
+
+.switchOrg {
+  margin: 28.5px 0 31px 0;
+  color: $primaryColor;
+  opacity: 1;
+}
+
+.itemText {
+  padding: 0 10.39px 0 10px;
+  font-size: 16px;
+}
+
+.sectionHeader {
+  font-size: 12px;
+  font-weight: 500;
+  color: $textColor;
+  opacity: 1;
+  margin-bottom: 10px;
+  height: unset;
+}

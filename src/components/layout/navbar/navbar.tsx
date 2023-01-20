@@ -1,9 +1,9 @@
-import { BellIcon, DropDownIcon, SearchIcon } from "../../../components/icons";
-import { Input } from "../../../components/input/input";
-import { Logo } from "../../../components/logo";
+import { BellIcon, DropDownIcon, SearchIcon } from "../../icons";
+import { Input } from "../../input/input";
+import { Logo } from "../../logo";
 import styles from "./navbar.module.scss";
 import userImg from "../../../assets/images/userImage.png";
-import Dropdown from "../../../components/dropdown/dropdown";
+import Dropdown from "../../dropdown/dropdown";
 
 export const NavBar = () => {
   return (
