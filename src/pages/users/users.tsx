@@ -8,6 +8,7 @@ import { ContentBody, PageTitle } from "../../components/layout/helpers";
 import Layout from "../../components/layout/layout";
 import { VerticalSpacer } from "../../components/utils";
 import styles from "./users.module.scss";
+import { UsersTable } from "./table";
 
 const Users = () => {
   return (
@@ -34,6 +35,7 @@ const Users = () => {
           />
         </div>
         <VerticalSpacer size={20} />
+        <UsersTable />
       </ContentBody>
     </Layout>
   );

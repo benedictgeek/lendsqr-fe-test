@@ -18,3 +18,9 @@
     padding: 0 30px;
   }
 }
+
+@mixin cardContainer {
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+}
