@@ -1,26 +1,38 @@
 import {
-  Children,
-  cloneElement,
   createRef,
   useEffect,
   useState,
   MouseEvent,
+  ReactNode,
+  PropsWithChildren,
 } from "react";
 
 import styles from "./dropdown.module.scss";
 
-const Dropdown = ({ children, content }: any) => {
+interface DropdownProps extends PropsWithChildren {
+  content: ReactNode;
+  externalToggle?: boolean;
+  open?: boolean;
+  handleClose?: () => void;
+}
+
+const Dropdown = ({
+  children,
+  content,
+  externalToggle = false,
+  open,
+  handleClose,
+  ...props
+}: DropdownProps) => {
   const [visible, setVisible] = useState(false);
   const [position, setPsition] = useState(styles.left);
 
   const ref = createRef<HTMLDivElement>();
 
   useEffect(() => {
-    console.log("REFF", ref);
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       const screenWidth = window.innerWidth;
-      console.log(screenWidth, rect.right);
       if (rect.right > screenWidth / 2) {
         setPsition(styles.right);
       } else {
@@ -29,7 +41,11 @@ const Dropdown = ({ children, content }: any) => {
     }
     const handleClick = (event: any) => {
       if (!ref.current?.contains(event.target)) {
-        setVisible(false);
+        if (externalToggle) {
+          handleClose!();
+        } else {
+          setVisible(false);
+        }
       }
     };
     document.addEventListener("click", handleClick);
@@ -38,10 +54,19 @@ const Dropdown = ({ children, content }: any) => {
     };
   }, [ref, setVisible]);
 
+  const handleClick = () => {
+    if (!externalToggle) {
+      setVisible(!visible);
+    } else {
+    }
+  };
+
+  const show = externalToggle ? open : visible;
+
   return (
-    <div className={`${styles.dropdown}`} ref={ref}>
-      <div onClick={() => setVisible(!visible)}>{children}</div>
-      {visible && (
+    <div className={`${styles.dropdown}`} ref={ref} {...props}>
+      <div onClick={handleClick}>{children}</div>
+      {show && (
         <div className={`${styles.dropdownContent} ${position}`}>{content}</div>
       )}
     </div>

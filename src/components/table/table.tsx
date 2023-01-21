@@ -43,6 +43,19 @@ export const DataTable = ({
               ))}
         </tbody>
       </table>
+
+      <div
+        className="paginator"
+        style={{ display: paginator ? "block" : "none" }}
+      >
+        {/* <Pagination
+          items={data}
+          pageSize={pageSize || 5}
+          prevNext={prevNext || false}
+          onPageChange={(item: any) => setPagedData(item)}
+          firstLast={firstLast || false}
+        /> */}
+      </div>
     </div>
   );
 };
