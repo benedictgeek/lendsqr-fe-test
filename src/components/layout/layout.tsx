@@ -7,8 +7,10 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={styles.container}>
       <NavBar />
-      <SideBar />
-      {children}
+      <div className={styles.sidebarAndContentcontainer}>
+        <SideBar />
+        {children}
+      </div>
     </div>
   );
 };

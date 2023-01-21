@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 @mixin flexCenter {
   display: flex;
   align-items: center;
@@ -8,4 +10,11 @@
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+@mixin navAndContentPadding {
+  padding: 0 60px;
+  @include forTablets {
+    padding: 0 30px;
+  }
 }

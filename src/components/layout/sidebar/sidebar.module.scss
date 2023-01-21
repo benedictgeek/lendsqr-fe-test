@@ -12,7 +12,7 @@
 }
 
 .dashboard {
-  margin-bottom: 19px;
+  margin-bottom: 30.5px;
 }
 
 .itemContainer {
@@ -22,6 +22,21 @@
   color: $primaryColor;
   opacity: 0.6;
   height: 40px;
+}
+
+.isActive {
+  opacity: 1;
+  border-left: 4px solid $secondaryColor;
+  padding-left: 26px;
+  background-color: rgba($secondaryColor, 0.06);
+}
+
+.sectionItems {
+  margin-bottom: 9.5px;
+}
+
+.sectionItemsLast {
+  margin-bottom: 30.5px;
 }
 
 .switchOrg {

@@ -1,6 +1,7 @@
 @import "../../../styles/utils";
 @import "../../../styles/colors";
 @import "../../../styles/values";
+@import "../../../styles/breakpoints";
 
 @mixin userName {
   font-size: 16px;
@@ -29,6 +30,10 @@
   input {
     padding: 12px 20px;
   }
+}
+
+.defaultSearchContainer {
+  width: 100%;
 }
 
 .searchIconContainer {
@@ -61,8 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  //same padding for content
-  padding: 0 60px;
+  @include navAndContentPadding;
 }
 
 .iconSearchContainer {
@@ -143,12 +147,6 @@
   }
   .bell {
     margin: 5px 0;
-  }
-}
-
-@media screen and (max-width: 956px) {
-  .navSection {
-    padding: 0 30px;
   }
 }
 
