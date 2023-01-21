@@ -11,4 +11,5 @@
 .content {
   @include navAndContentPadding;
   margin-top: 60px;
+  width: 100%;
 }

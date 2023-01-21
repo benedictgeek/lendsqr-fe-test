@@ -1,0 +1,48 @@
+@import "../../styles/colors";
+@import "../../styles/utils";
+
+.summaryCardsContainer {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.summaryCard {
+  width: 240px;
+  height: 160px;
+  background: white;
+  padding: 20px 20px 30px 30px;
+  margin-bottom: 20px;
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+  .icon {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    @include flexCenter;
+    &.users {
+      background: rgba(#df18ff, 0.1);
+    }
+    &.activeUsers {
+      background: rgba(#5718ff, 0.1) ;
+    }
+    &.usersWithLoans {
+      background: rgba(#f55f44, 0.1) ;
+    }
+    &.usersWithSavings {
+      background: rgba(#ff3366, 0.1) ;
+    }
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .value {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
