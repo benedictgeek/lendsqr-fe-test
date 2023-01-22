@@ -35,6 +35,28 @@
     font-size: 14px;
   }
 }
+
+.selectSize {
+  font-family: inherit;
+  border-radius: 4px;
+  background: rgba($primaryColor, 0.1);
+  padding: 5px 12px;
+  color: $primaryColor;
+  font-weight: 500;
+  font-size: 14px;
+  height: 30px;
+  width: 80px;
+  margin: 0 10px;
+}
+
+.paginationAndSizeContainer {
+  min-width: 700px;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .paginator {
   background: white;
   padding: 1em 5px;
