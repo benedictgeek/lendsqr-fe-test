@@ -25,8 +25,8 @@ export const DataTable = ({ headers, data, paginator }: DataTableProps) => {
 
   useEffect(() => {
     let data = splitTableDataIntoChunksOfArray();
-    setPagedData(data[activePage - 1]);
-  }, [pageSize, activePage]);
+    setPagedData(data[activePage - 1] || []);
+  }, [data, pageSize, activePage]);
 
   return (
     <>

@@ -5,12 +5,15 @@ import {
   MouseEvent,
   ReactNode,
   PropsWithChildren,
+  HTMLProps,
+  FC,
 } from "react";
 
 import styles from "./dropdown.module.scss";
 
-interface DropdownProps extends PropsWithChildren {
+interface DropdownProps extends Omit<HTMLProps<HTMLDivElement>, "content"> {
   content: ReactNode;
+  contentClassName?: string;
   externalToggle?: boolean;
   open?: boolean;
   handleClose?: () => void;
@@ -19,11 +22,12 @@ interface DropdownProps extends PropsWithChildren {
 const Dropdown = ({
   children,
   content,
+  contentClassName,
   externalToggle = false,
   open,
   handleClose,
   ...props
-}: DropdownProps) => {
+}: DropdownProps & { children: ReactNode }) => {
   const [visible, setVisible] = useState(false);
   const [position, setPsition] = useState(styles.left);
 
@@ -67,7 +71,11 @@ const Dropdown = ({
     <div className={`${styles.dropdown}`} ref={ref} {...props}>
       <div onClick={handleClick}>{children}</div>
       {show && (
-        <div className={`${styles.dropdownContent} ${position}`}>{content}</div>
+        <div
+          className={`${styles.dropdownContent} ${position} ${contentClassName}`}
+        >
+          {content}
+        </div>
       )}
     </div>
   );

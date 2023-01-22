@@ -53,3 +53,54 @@
     justify-self: flex-start;
   }
 }
+
+.chip {
+  border-radius: 100px;
+  width: fit-content;
+  line-height: 16px;
+  &.active {
+    padding: 7px 14px 6px 14px;
+    color: #39cd62;
+    background-color: rgba(#39cd62, 0.06);
+  }
+
+  &.inactive {
+    padding: 7px 13px 6px 13px;
+    color: $textColor;
+    background-color: rgba($textColor, 0.06);
+  }
+
+  &.pending {
+    padding: 7px 18px 6px 18px;
+    color: #e9b200;
+    background-color: rgba(#e9b200, 0.06);
+  }
+
+  &.blacklisted {
+    padding: 7px 12px 6px 12px;
+    color: #e4033b;
+    background-color: rgba(#e4033b, 0.06);
+  }
+}
+
+.actionContentContainer {
+  padding: 20px 50px 22px 26.01px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    p {
+      margin-left: 9.69px;
+      font-weight: 500;
+      line-height: 16.42px;
+    }
+  }
+}
+
+.actionsDropdown {
+  border: none !important;
+  top: 0 !important;
+  // right: -100px !important;
+}
