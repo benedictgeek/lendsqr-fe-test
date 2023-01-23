@@ -13,11 +13,12 @@ const LoginForm = () => {
         </div>
         <h2 className={styles.welcome}>Welcome!</h2>
         <p className={styles.welcomeInfo}>Enter details to login</p>
-        <Input placeholder="Email" />
+        <Input placeholder="Email" className={styles.authInput} />
         <VerticalSpacer size={24} />
         <Input
           placeholder="Password"
           iconRight={<p className={styles.showPassword}>SHOW</p>}
+          className={styles.authInput}
         />
         <VerticalSpacer size={24} />
         <a className={styles.forgotPassword}>FORGOT PASSWORD?</a>

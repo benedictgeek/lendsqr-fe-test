@@ -8,6 +8,8 @@ import dayjs from "dayjs";
 import { ActivateUserIcon, BlackListUserIcon, ViewUserIcon } from "./icons";
 import { VerticalSpacer } from "../../components/utils";
 import { Link } from "react-router-dom";
+import { Input } from "../../components/input/input";
+import FormGroup from "../../components/formGroup/formGroup";
 
 export const UsersTable = () => {
   const [data, setData] = useState<ReactNode[][]>([]);
@@ -41,7 +43,7 @@ export const UsersTable = () => {
   }, []);
 
   const headers = [
-    <Dropdown content={"SOME STUFF"}>
+    <Dropdown content={<TableHeaderFilter />}>
       <div className={styles.tableHeaderItem}>
         <p>ORGANIZATION</p> <FilterIcon />
       </div>
@@ -65,6 +67,37 @@ export const UsersTable = () => {
   ];
 
   return <DataTable headers={headers} paginator={true} data={data} />;
+};
+
+const TableHeaderFilter = () => {
+  return (
+    <div className={styles.tableHeaderFilterContainer}>
+      <FormGroup label="Organization" htmlFor="organization">
+        <Input id="organization" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+      <FormGroup label="Username" htmlFor="username">
+        <Input id="username" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+      <FormGroup label="Email" htmlFor="email">
+        <Input id="email" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+      <FormGroup label="Date" htmlFor="date">
+        <Input id="date" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+      <FormGroup label="Phone Number" htmlFor="phoneNumber">
+        <Input id="phoneNumber" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+      <FormGroup label="Status" htmlFor="status">
+        <Input id="status" />
+      </FormGroup>
+      <VerticalSpacer size={20} />
+    </div>
+  );
 };
 
 type StatuType = "inactive" | "blacklisted" | "active" | "pending";
