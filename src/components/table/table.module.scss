@@ -26,6 +26,13 @@
     padding: 21px 0;
   }
 
+  th:not(:last-child):not(:first-child),
+  td:not(:last-child):not(:first-child),
+  th:last-child,
+  td:last-child {
+    padding-left: 20px;
+  }
+
   th {
     font-size: 12px;
     font-weight: 600;
