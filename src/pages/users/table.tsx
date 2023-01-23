@@ -6,10 +6,12 @@ import Dropdown from "../../components/dropdown/dropdown";
 import axios from "axios";
 import dayjs from "dayjs";
 import { ActivateUserIcon, BlackListUserIcon, ViewUserIcon } from "./icons";
-import { VerticalSpacer } from "../../components/utils";
+import { HorizontalSpacer, VerticalSpacer } from "../../components/utils";
 import { Link } from "react-router-dom";
 import { DatePicker, Input } from "../../components/input/input";
 import FormGroup from "../../components/formGroup/formGroup";
+import { Select } from "../../components/select/select";
+import { Button } from "../../components/button/button";
 
 export const UsersTable = () => {
   const [data, setData] = useState<ReactNode[][]>([]);
@@ -43,7 +45,7 @@ export const UsersTable = () => {
   }, []);
 
   const headers = [
-    <Dropdown content={<TableHeaderFilter />}>
+    <Dropdown content={<TableHeaderFilter />} contentClassName={styles.filtersDropdown}>
       <div className={styles.tableHeaderItem}>
         <p>ORGANIZATION</p> <FilterIcon />
       </div>
@@ -73,29 +75,35 @@ const TableHeaderFilter = () => {
   return (
     <div className={styles.tableHeaderFilterContainer}>
       <FormGroup label="Organization" htmlFor="organization">
-        <Input id="organization" />
+        <Select id="organization" values={[]} placeholder="Select" />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Username" htmlFor="username">
-        <Input id="username" />
+        <Input id="username" placeholder="User" />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Email" htmlFor="email">
-        <Input id="email"/>
+        <Input id="email" placeholder="Email" />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Date" htmlFor="date">
-        <DatePicker id="date" placeholder="Date"  />
+        <DatePicker id="date" placeholder="Date" />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Phone Number" htmlFor="phoneNumber">
-        <Input id="phoneNumber" />
+        <Input id="phoneNumber" placeholder="Phone Number" />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Status" htmlFor="status">
-        <Input id="status" />
+        <Select id="status" values={[]} placeholder="Select" />
       </FormGroup>
       <VerticalSpacer size={20} />
+
+      <div className={styles.filterButtons}>
+        <Button variant="outlined">Reset</Button>
+        <HorizontalSpacer size={40} />
+        <Button>Filter</Button>
+      </div>
     </div>
   );
 };

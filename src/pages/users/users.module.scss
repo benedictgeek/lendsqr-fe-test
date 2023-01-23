@@ -99,6 +99,12 @@
   }
 }
 
+.filtersDropdown {
+  border: none !important;
+  top: 120% !important;
+  left: -10px !important;
+}
+
 .actionsDropdown {
   border: none !important;
   top: 0 !important;
@@ -108,4 +114,8 @@
 .tableHeaderFilterContainer {
   width: 270px;
   padding: 28px 12px 20px 12px;
+
+  .filterButtons {
+    display: flex;
+  }
 }
