@@ -15,7 +15,7 @@
   background: #ffffff;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   overflow: scroll;
-  font-family: "Work Sans", sans-serif;
+  font-family: $workSansFont;
   &.close {
     margin-left: -$sidebarWidth;
     // animation: all 1s ease-in-out;

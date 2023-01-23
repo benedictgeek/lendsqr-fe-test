@@ -1,9 +1,11 @@
+@import "../../styles/values";
+
 .container {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
-  font-family: "Work Sans", sans-serif;
+  font-family: $workSansFont;
 }
 
 .sidebarAndContentcontainer {

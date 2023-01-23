@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @font-face {
   font-family: "Avenir Next";
   src: url(../src/assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
   src: url(../src/assets/fonts/AvenirNextLTPro-It.otf) format("opentype");
   src: url(../src/assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "SF Compact Text";
+  src: url(../src/assets/fonts/SFCompactText-Regular.ttf) format("opentype");
 }
 
 html,
