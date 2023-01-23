@@ -1,8 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  flex: 1.1;
-  // padding: 10px 100px;
+  flex: 1;
   align-items: flex-end;
 }
 
@@ -17,12 +16,9 @@
 
 .illustrationContainer {
   padding: 0 69px 0px 67px;
-  // flex: 1;
   margin-top: 139px;
-  // object-fit:cover;
   img {
     width: 100%;
-    // object-fit: contain;
   }
 }
 

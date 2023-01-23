@@ -9,7 +9,7 @@ const Illustration = () => {
         <div className={styles.logoContainer}>
           <Logo />
         </div>
-        <div className={styles.illustrationContainer}>
+        <div className={styles.illustrationContainer} data-testid="loginIllustration">
           <img src={siginImage} />
         </div>
       </div>
