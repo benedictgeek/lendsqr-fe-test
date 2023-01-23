@@ -10,7 +10,7 @@
 
 .content {
   @include navAndContentPadding;
-  padding-top: 60px;
+  padding-top: 60px !important;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
