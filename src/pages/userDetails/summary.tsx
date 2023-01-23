@@ -1,8 +1,10 @@
 import styles from "./userDetails.module.scss";
 import { Avartar, StartEmpty, StartFilled } from "../../components/icons";
 import { VerticalSpacer } from "../../components/utils";
+import { ObjectLiteral } from "./userDetails";
+import { formatAmount } from "../../utils";
 
-export const UserSummary = () => {
+export const UserSummary = ({ userData }: { userData: ObjectLiteral }) => {
   return (
     <div className={styles.userHighlights}>
       <div className={styles.details}>
@@ -11,7 +13,7 @@ export const UserSummary = () => {
             <Avartar />
           </div>
           <div className={styles.nameAndIDContainer}>
-            <div>Name Namme</div>
+            <div>{userData.userName}</div>
             <VerticalSpacer size={8} />
             <div>12ER456GJJ</div>
           </div>
@@ -24,9 +26,9 @@ export const UserSummary = () => {
           </div>
         </div>
         <div className={styles.accountContainer}>
-          <div>Name Namme</div>
+          <div>{formatAmount(userData.accountBalance)}</div>
           <VerticalSpacer size={12} />
-          <div>9912345678/Providus Bank</div>
+          <div>{userData.accountNumber}/Providus Bank</div>
         </div>
       </div>
 

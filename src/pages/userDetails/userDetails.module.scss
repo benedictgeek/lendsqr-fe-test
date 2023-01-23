@@ -5,7 +5,7 @@
   display: flex;
 
   align-items: center;
-
+  cursor: pointer;
   span {
     font-size: 16px;
   }
@@ -19,13 +19,15 @@
 
   .actions {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
-    :last-child {
-      margin-left: 20px;
+    :first-child {
+      margin-right: 20px;
     }
 
     & > * {
       width: unset;
+      margin-bottom: 10px;
     }
   }
 }
@@ -150,7 +152,7 @@
       display: grid;
       row-gap: 30px;
       column-gap: 30px;
-      grid-template-columns: repeat(auto-fill, minmax(167px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       .item {
         display: flex;
         flex-direction: column;
@@ -162,6 +164,9 @@
         .value {
           font-size: 16px;
           font-weight: 500;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
