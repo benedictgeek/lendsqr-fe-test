@@ -3,7 +3,8 @@
 @import "../../styles/values";
 
 .LTable {
-  min-width: 700px;
+  // width: 100%;
+  // min-width: 700px;
   overflow-x: scroll;
   @include cardContainer;
   background-color: white;

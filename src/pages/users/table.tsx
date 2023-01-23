@@ -14,6 +14,7 @@ import { Select } from "../../components/select/select";
 import { Button } from "../../components/button/button";
 
 export const UsersTable = () => {
+  const [loading, setLoading] = useState(true);
   const [data, setData] = useState<ReactNode[][]>([]);
   const fetchUsers = async () => {
     try {
@@ -37,7 +38,10 @@ export const UsersTable = () => {
         formatedData.push(itemArray);
       }
       setData(formatedData);
-    } catch (error) {}
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -45,28 +49,57 @@ export const UsersTable = () => {
   }, []);
 
   const headers = [
-    <Dropdown content={<TableHeaderFilter />} contentClassName={styles.filtersDropdown}>
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
       <div className={styles.tableHeaderItem}>
         <p>ORGANIZATION</p> <FilterIcon />
       </div>
     </Dropdown>,
-    <div className={styles.tableHeaderItem}>
-      <p>USERNAME</p> <FilterIcon />
-    </div>,
-    <div className={styles.tableHeaderItem}>
-      <p>EMAIL</p> <FilterIcon />
-    </div>,
-    <div className={styles.tableHeaderItem}>
-      <p>PHONE NUMBER</p> <FilterIcon />
-    </div>,
-    <div className={styles.tableHeaderItem}>
-      <p>DATE JOINED</p> <FilterIcon />
-    </div>,
-    <div className={styles.tableHeaderItem}>
-      <p>STATUS</p> <FilterIcon />
-    </div>,
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
+      <div className={styles.tableHeaderItem}>
+        <p>USERNAME</p> <FilterIcon />
+      </div>
+    </Dropdown>,
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
+      <div className={styles.tableHeaderItem}>
+        <p>EMAIL</p> <FilterIcon />
+      </div>
+    </Dropdown>,
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
+      <div className={styles.tableHeaderItem}>
+        <p>PHONE NUMBER</p> <FilterIcon />
+      </div>
+    </Dropdown>,
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
+      <div className={styles.tableHeaderItem}>
+        <p>DATE JOINED</p> <FilterIcon />
+      </div>
+    </Dropdown>,
+    <Dropdown
+      content={<TableHeaderFilter />}
+      contentClassName={styles.filtersDropdown}
+    >
+      <div className={styles.tableHeaderItem}>
+        <p>STATUS</p> <FilterIcon />
+      </div>
+    </Dropdown>,
     "",
   ];
+  if (loading) return <p>Loading...</p>;
 
   return <DataTable headers={headers} paginator={true} data={data} />;
 };
@@ -100,7 +133,7 @@ const TableHeaderFilter = () => {
       <VerticalSpacer size={20} />
 
       <div className={styles.filterButtons}>
-        <Button variant="outlined">Reset</Button>
+        <Button variant="outlined" className={styles.resetFilter}>Reset</Button>
         <HorizontalSpacer size={40} />
         <Button>Filter</Button>
       </div>

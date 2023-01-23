@@ -9,6 +9,7 @@ interface InputProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({
   loading,
   variant = "contained",
+  className,
   ...props
 }: InputProps) => {
   return (
@@ -16,7 +17,7 @@ export const Button = ({
       onClick={props.onClick}
       className={`button ${loading ? "Bloading" : ""} ${
         props.disabled ? "disabled" : ""
-      } ${variant} ${props.className}`}
+      } ${variant} ${className}`}
       {...props}
       type={props.type}
     >
