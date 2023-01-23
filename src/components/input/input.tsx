@@ -1,4 +1,12 @@
-import { HTMLProps, ReactNode } from "react";
+import {
+  HTMLProps,
+  ReactNode,
+  useState,
+  forwardRef,
+  useRef,
+  useEffect,
+} from "react";
+import { CalendarIcon } from "../icons";
 import "./input.scss";
 
 interface InputProps extends HTMLProps<HTMLInputElement> {
@@ -6,14 +14,8 @@ interface InputProps extends HTMLProps<HTMLInputElement> {
   iconRight?: ReactNode;
 }
 
-export const Input = ({
-  onChange,
-  className,
-  iconLeft,
-  iconRight,
-  style,
-  ...props
-}: InputProps) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { onChange, className, iconLeft, iconRight, style } = props;
   return (
     <div
       className={`input ${className} ${props.disabled ? "disabled" : ""} ${
@@ -22,8 +24,44 @@ export const Input = ({
       style={style}
     >
       {iconLeft && <div className="icon left">{iconLeft}</div>}
-      <input value={props.value} onChange={onChange} {...props} />
+      <input value={props.value} onChange={onChange} {...props} ref={ref} />
       {iconRight && <div className="icon right">{iconRight}</div>}
     </div>
+  );
+});
+
+export const DatePicker = (props: Omit<InputProps, "type">) => {
+  const [type, setType] = useState("text");
+  const ref = useRef<HTMLInputElement>(null);
+
+  const onFocus = () => {
+    setType("date");
+  };
+
+  const onBlur = () => {
+    setType("text");
+  };
+
+  if (ref == null) return <></>;
+  return (
+    <Input
+      {...props}
+      type={type}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      ref={ref}
+      iconRight={
+        <div
+          style={{ padding: "0 7px" }}
+          onClick={() => {
+            ref.current!.type = "date";
+            ref.current?.focus();
+            ref.current?.showPicker();
+          }}
+        >
+          <CalendarIcon />
+        </div>
+      }
+    />
   );
 };

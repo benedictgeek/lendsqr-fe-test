@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 import { ActivateUserIcon, BlackListUserIcon, ViewUserIcon } from "./icons";
 import { VerticalSpacer } from "../../components/utils";
 import { Link } from "react-router-dom";
-import { Input } from "../../components/input/input";
+import { DatePicker, Input } from "../../components/input/input";
 import FormGroup from "../../components/formGroup/formGroup";
 
 export const UsersTable = () => {
@@ -81,11 +81,11 @@ const TableHeaderFilter = () => {
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Email" htmlFor="email">
-        <Input id="email" />
+        <Input id="email"/>
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Date" htmlFor="date">
-        <Input id="date" />
+        <DatePicker id="date" placeholder="Date"  />
       </FormGroup>
       <VerticalSpacer size={20} />
       <FormGroup label="Phone Number" htmlFor="phoneNumber">
