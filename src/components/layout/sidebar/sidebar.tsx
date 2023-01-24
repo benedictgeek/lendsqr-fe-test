@@ -49,9 +49,9 @@ export const SideBar = () => {
           <BriefcaseIcon /> <p className={styles.itemText}>Dashboard</p>
         </div>
 
-        {menuItems.map((section) => {
+        {menuItems.map((section, index) => {
           return (
-            <>
+            <div key={`section_${index}`}>
               <div
                 className={`${styles.itemContainer} ${styles.sectionHeader}`}
               >
@@ -61,12 +61,13 @@ export const SideBar = () => {
                 const isLastItem = index == section.items.length - 1;
                 let isActive = false;
                 if (item.route) {
-                  isActive = currentDashboardPath.includes(
+                  isActive = currentDashboardPath?.includes(
                     item.route.substring(1) || ""
                   );
                 }
                 return (
                   <div
+                    key={`${section.section}_menu_${index}`}
                     className={`${styles.itemContainer} ${
                       isLastItem ? styles.sectionItemsLast : styles.sectionItems
                     } ${isActive ? styles.isActive : ""}`}
@@ -76,7 +77,7 @@ export const SideBar = () => {
                   </div>
                 );
               })}
-            </>
+            </div>
           );
         })}
       </div>

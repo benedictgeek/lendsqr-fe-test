@@ -10,7 +10,7 @@ export const Menu = () => {
       <path
         d="M4 7H20M4 12H20M4 17H20"
         stroke="#000000"
-        stroke-width="2"
+        strokeWidth="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -30,7 +30,7 @@ export const MenuClose = () => {
       <path
         d="M6 6L18 18M18 6L6 18"
         stroke="#000000"
-        stroke-width="2"
+        strokeWidth="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />

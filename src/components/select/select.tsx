@@ -18,8 +18,9 @@ export const Select = (props: SelectProps) => {
         selected == "" ? styles.placeholder : ""
       }`}
       {...props}
+      defaultValue={"_placeholder"}
     >
-      <option value="" selected disabled>
+      <option value="_placeholder" disabled>
         {props.placeholder}
       </option>
       {props.values.map((item) => {

@@ -14,7 +14,7 @@ const Users = () => {
   return (
     <Layout>
       <ContentBody>
-        <PageTitle>Users</PageTitle>
+        <PageTitle data-testid="usersPageTitle">Users</PageTitle>
         <VerticalSpacer size={40} />
         <div className={styles.summaryCardsContainer}>
           <SummaryCard type="users" value={2453} icon={<UsersSummaryIcon />} />
