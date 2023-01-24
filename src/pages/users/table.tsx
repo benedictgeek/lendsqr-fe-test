@@ -133,7 +133,9 @@ const TableHeaderFilter = () => {
       <VerticalSpacer size={20} />
 
       <div className={styles.filterButtons}>
-        <Button variant="outlined" className={styles.resetFilter}>Reset</Button>
+        <Button variant="outlined" className={styles.resetFilter}>
+          Reset
+        </Button>
         <HorizontalSpacer size={40} />
         <Button>Filter</Button>
       </div>
@@ -201,7 +203,9 @@ const MoreActions = ({ userId }: { userId: string }) => {
       handleClose={() => setOpen(false)}
       contentClassName={styles.actionsDropdown}
     >
-      <MoreIcon />
+      <div style={{ padding: "5px" }}>
+        <MoreIcon />
+      </div>
     </Dropdown>
   );
 };

@@ -1,6 +1,31 @@
 import { useEffect, useMemo, useState } from "react";
 import { ArrowDownIcon, BriefcaseIcon } from "../../icons";
-import { Menu, MenuClose } from "./icons";
+import { VerticalSpacer } from "../../utils";
+import {
+  AuditLogsIcon,
+  DashboardIcon,
+  DecisionModelsIcon,
+  FeesAndChargesIcon,
+  FeesAndPricingIcon,
+  GuarantorsIcon,
+  KarmaIcon,
+  LoanRequestsIcon,
+  LoansIcon,
+  Menu,
+  MenuClose,
+  PrefrencesIcon,
+  ReportsIcon,
+  SavingsIcon,
+  SavingsProductIcon,
+  ServiceAccountIcon,
+  ServicesIcon,
+  SettlementsIcon,
+  SignOutIcon,
+  SystemMessagesIcon,
+  TransactionsIcon,
+  Users,
+  WhitelistIcon,
+} from "./icons";
 import styles from "./sidebar.module.scss";
 
 export const SideBar = () => {
@@ -46,7 +71,7 @@ export const SideBar = () => {
         </div>
 
         <div className={`${styles.itemContainer} ${styles.dashboard}`}>
-          <BriefcaseIcon /> <p className={styles.itemText}>Dashboard</p>
+          <DashboardIcon /> <p className={styles.itemText}>Dashboard</p>
         </div>
 
         {menuItems.map((section, index) => {
@@ -72,14 +97,23 @@ export const SideBar = () => {
                       isLastItem ? styles.sectionItemsLast : styles.sectionItems
                     } ${isActive ? styles.isActive : ""}`}
                   >
-                    <BriefcaseIcon />{" "}
-                    <p className={styles.itemText}>{item.title}</p>
+                    {item.icon} <p className={styles.itemText}>{item.title}</p>
                   </div>
                 );
               })}
             </div>
           );
         })}
+        <VerticalSpacer size={9.5} />
+        <div className={styles.divider}></div>
+        <VerticalSpacer size={9.5} />
+        <div className={`${styles.itemContainer} ${styles.logout}`}>
+          <SignOutIcon /> <p className={styles.itemText}>Logout</p>
+        </div>
+        <VerticalSpacer size={19} />
+        <div className={`${styles.itemContainer} ${styles.version}`}>
+          <p className={styles.itemText}>v1.2.0</p>
+        </div>
       </div>
       {showDrawer && (
         <span className={styles.drawer} onClick={handleDrawerCLick}>
@@ -96,36 +130,36 @@ const menuItems = [
     items: [
       {
         title: "Users",
-        icon: <BriefcaseIcon />,
+        icon: <Users />,
         route: "/users",
       },
       {
         title: "Gurantors",
-        icon: <BriefcaseIcon />,
+        icon: <GuarantorsIcon />,
       },
       {
         title: "Loans",
-        icon: <BriefcaseIcon />,
+        icon: <LoansIcon />,
       },
       {
         title: "Decision Models",
-        icon: <BriefcaseIcon />,
+        icon: <DecisionModelsIcon />,
       },
       {
         title: "Savings",
-        icon: <BriefcaseIcon />,
+        icon: <SavingsIcon />,
       },
       {
         title: "Loan Requests",
-        icon: <BriefcaseIcon />,
+        icon: <LoanRequestsIcon />,
       },
       {
         title: "Whitelist",
-        icon: <BriefcaseIcon />,
+        icon: <WhitelistIcon />,
       },
       {
         title: "Karma",
-        icon: <BriefcaseIcon />,
+        icon: <KarmaIcon />,
       },
     ],
   },
@@ -138,35 +172,35 @@ const menuItems = [
       },
       {
         title: "Loan Products",
-        icon: <BriefcaseIcon />,
+        icon: <LoanRequestsIcon />,
       },
       {
         title: "Savings Products",
-        icon: <BriefcaseIcon />,
+        icon: <SavingsProductIcon />,
       },
       {
         title: "Fees and Charges",
-        icon: <BriefcaseIcon />,
+        icon: <FeesAndChargesIcon />,
       },
       {
         title: "Transactions",
-        icon: <BriefcaseIcon />,
+        icon: <TransactionsIcon />,
       },
       {
         title: "Services",
-        icon: <BriefcaseIcon />,
+        icon: <ServicesIcon />,
       },
       {
         title: "Service Account",
-        icon: <BriefcaseIcon />,
+        icon: <ServiceAccountIcon />,
       },
       {
         title: "Settlements",
-        icon: <BriefcaseIcon />,
+        icon: <SettlementsIcon />,
       },
       {
         title: "Reports",
-        icon: <BriefcaseIcon />,
+        icon: <ReportsIcon />,
       },
     ],
   },
@@ -175,15 +209,19 @@ const menuItems = [
     items: [
       {
         title: "Preferences",
-        icon: <BriefcaseIcon />,
+        icon: <PrefrencesIcon />,
       },
       {
         title: "Fees and Pricing",
-        icon: <BriefcaseIcon />,
+        icon: <FeesAndPricingIcon />,
       },
       {
         title: "Audit Logs",
-        icon: <BriefcaseIcon />,
+        icon: <AuditLogsIcon />,
+      },
+      {
+        title: "System Messages",
+        icon: <SystemMessagesIcon />,
       },
     ],
   },

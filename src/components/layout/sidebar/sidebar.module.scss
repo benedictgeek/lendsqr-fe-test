@@ -29,8 +29,6 @@
   }
 }
 
-
-
 .drawer {
   position: absolute;
   right: -35px;
@@ -66,10 +64,23 @@
   margin-bottom: 30.5px;
 }
 
+.logout,
 .switchOrg {
-  margin: 28.5px 0 31px 0;
   color: $primaryColor;
   opacity: 1;
+}
+
+.switchOrg {
+  margin: 28.5px 0 31px 0;
+}
+
+.divider {
+  border-top: 1px solid rgba($primaryColor, 0.1);
+  width: 100%;
+}
+
+.logout{
+  font-size: 12px;
 }
 
 .itemText {
