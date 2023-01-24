@@ -1,3 +1,3 @@
 export const formatAmount = (amount: number) => {
-  return `₦${amount.toLocaleString()}`;
+  return `₦${amount?.toLocaleString()}`;
 };

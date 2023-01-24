@@ -11,8 +11,8 @@ export const Menu = () => {
         d="M4 7H20M4 12H20M4 17H20"
         stroke="#000000"
         strokeWidth="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -31,8 +31,8 @@ export const MenuClose = () => {
         d="M6 6L18 18M18 6L6 18"
         stroke="#000000"
         strokeWidth="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -54,7 +54,9 @@ const UserDetails = () => {
         ) : (
           <>
             <div className={styles.pageHeader}>
-              <PageTitle>User Details</PageTitle>
+              <PageTitle data-testid="userDetailsHeader">
+                User Details
+              </PageTitle>
               <div className={styles.actions}>
                 <Button variant="outlined" className={styles.blackListUser}>
                   BLACKLIST USER
@@ -65,15 +67,12 @@ const UserDetails = () => {
             <VerticalSpacer size={30} />
             <UserSummary userData={userData} />
             <VerticalSpacer size={30} />
-            <AdditionalInformation userData={userData}/>
+            <AdditionalInformation userData={userData} />
           </>
         )}
       </ContentBody>
     </Layout>
   );
 };
-
-
-
 
 export default UserDetails;

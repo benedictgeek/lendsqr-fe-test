@@ -6,14 +6,14 @@ import { formatAmount } from "../../utils";
 
 export const UserSummary = ({ userData }: { userData: ObjectLiteral }) => {
   return (
-    <div className={styles.userHighlights}>
+    <div className={styles.userHighlights} data-testid="userSummary">
       <div className={styles.details}>
         <div className={styles.profile}>
           <div className={styles.avartar}>
             <Avartar />
           </div>
           <div className={styles.nameAndIDContainer}>
-            <div>{userData.userName}</div>
+            <div data-testid="userName">{userData.userName}</div>
             <VerticalSpacer size={8} />
             <div>12ER456GJJ</div>
           </div>
@@ -28,7 +28,7 @@ export const UserSummary = ({ userData }: { userData: ObjectLiteral }) => {
         <div className={styles.accountContainer}>
           <div>{formatAmount(userData.accountBalance)}</div>
           <VerticalSpacer size={12} />
-          <div>{userData.accountNumber}/Providus Bank</div>
+          <div data-testid="accountNumber">{userData.accountNumber}/Providus Bank</div>
         </div>
       </div>
 

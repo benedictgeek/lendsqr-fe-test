@@ -9,7 +9,7 @@ export const AdditionalInformation = ({
   userData: ObjectLiteral;
 }) => {
   return (
-    <div className={styles.additionalInformation}>
+    <div className={styles.additionalInformation} data-testid="additionalInfo">
       <AdditionalInformationSection
         headerText={"Personal Information"}
         values={[

@@ -5,8 +5,6 @@ import MatchMediaMock from 'jest-matchmedia-mock';
 
 import Users from "../pages/users/users";
 
-// let matchMedia;
-
 const server = setupServer();
 beforeAll(() => {
     new MatchMediaMock();
@@ -18,7 +16,6 @@ beforeAll(() => {
 
 beforeEach(() => {
   server.resetHandlers();
-  localStorage.clear();
 });
 
 
